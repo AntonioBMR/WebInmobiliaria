@@ -1,0 +1,114 @@
+html {
+    background-color: #e9e9e9;
+    background-image: -webkit-linear-gradient(270deg,rgb(230,233,233) 0%,rgb(216,221,221) 100%);
+    background-image: linear-gradient(270deg,rgb(235,233,233) 0%,rgb(216,221,221) 100%);
+    -webkit-font-smoothing: antialiased;
+    padding: 2em 0em 2em;
+    margin: 0auto;
+    
+
+}
+
+body {
+    margin: 0 auto;
+    padding: 1em 1em 1em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    color: #545454;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
+    
+}
+form{
+     margin: 0 auto; background: #112222; width: 500px; padding: 10px;}
+
+table{
+    margin: 0 auto;
+    border-collapse:  initial;
+    border-color: black;
+    border-style:  solid;
+    background-color: white;
+
+}
+table a{
+    
+}
+th{
+    background-color: grey;
+    border-collapse: initial;
+    border-color: black;
+    border-style:  solid;
+    text-decoration-color: black;
+}
+td{
+  text-align: center;
+      border-collapse: initial;
+    border-color: black;
+    border-style:  solid;
+
+}
+label{
+    font-weight: bold;
+    color: white;
+    float:left;
+    width: 50%;
+}
+
+
+p input{
+   width: 60%;
+
+}
+form div{
+    margin:0auto;
+}
+label{
+    width: 20%;
+}
+div{
+    padding: 10px;
+    margin: 0 auto
+}
+
+
+h2, h3,h1 {
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    border-bottom: solid #ddd;
+    color: #444;
+    font-weight: 700;
+    line-height: 1.3em;
+}
+p, strong {
+    font-weight: 600;
+}
+image {
+    -webkit-animation: colorize 2s cubic-bezier(0, 0, .78, .36) 1;
+    animation: colorize 2s cubic-bezier(0, 0, .78, .36) 1;
+    background: transparent;
+    border: 10px solid rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    display: block;
+    margin: 1.3em auto;
+    max-width: 95%;
+}
+
+@-webkit-keyframes colorize {
+    0% {
+        -webkit-filter: grayscale(100%);
+    }
+    100% {
+        -webkit-filter: grayscale(3%);
+    }
+}
+
+@keyframes colorize {
+    0% {
+        filter: grayscale(100%);
+    }
+    100% {
+        filter: grayscale(2%);
+    }
+}
