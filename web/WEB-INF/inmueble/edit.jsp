@@ -38,7 +38,8 @@
                     out.print(mensaje1);
                 }
             %>
-             <a href="control?target=inmueble&op=select&action=view">Volver a inicio</a>
+           
+            <a href="control?target=inmueble&op=select&action=view">Volver a inicio</a>
 
     </body>
 </html>

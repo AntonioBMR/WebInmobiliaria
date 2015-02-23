@@ -28,7 +28,6 @@ public static List<Foto> get() {
         session.close();
         return fotos;
     }
-
     public static Foto get(String id) {
         Session session = NewHibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
@@ -37,7 +36,6 @@ public static List<Foto> get() {
         session.close();
         return f;
     }
-
     public static void delete(String id) {
         Session session = NewHibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
@@ -47,7 +45,6 @@ public static List<Foto> get() {
         session.flush();
         session.close();
     }
-
     public static void insert(Foto i) {
         Session session = NewHibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();

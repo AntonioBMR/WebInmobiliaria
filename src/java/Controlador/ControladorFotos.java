@@ -65,6 +65,8 @@ public class ControladorFotos extends HttpServlet {
         } else if(target.equals("foto")
                 && op.equals("insert")
                 && action.equals("op")){
+            
+            System.out.println("llega");
             forward = false;
             String id = request.getParameter("id");
             destino = "control?target=inmueble&op=select&action=view";
@@ -86,6 +88,7 @@ public class ControladorFotos extends HttpServlet {
                 Foto f = new Foto();
                 f.setInmueble(ModeloInmueble.get(id));
                 f.setRuta(fileName);
+                System.out.println("foto"+f.getRuta().toString());
                 ModeloFoto.insert(f);
             } catch (Exception e) {
             }

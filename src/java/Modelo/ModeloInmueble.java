@@ -46,7 +46,7 @@ public class ModeloInmueble {
     public static void insert(Inmueble i) {
         Session session = NewHibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        session.save(i);
+        session.save(i);  
         session.getTransaction().commit();
         session.flush();
         session.close();

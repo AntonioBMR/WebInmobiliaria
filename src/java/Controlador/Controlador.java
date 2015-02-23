@@ -15,6 +15,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -85,6 +87,33 @@ public class Controlador extends HttpServlet {
                     forward = true;
                     request.setAttribute("falso", "introduzca precio válido");
                     destino = "control?target=inmueble&op=insert&action=view";
+                }
+            }
+        }else if (target.equals("inmueble")
+                && op.equals("insert")
+                && action.equals("opandroid")) {
+            if (!request.getParameter("precio").isEmpty() & !request.getParameter("localidad").isEmpty()
+                    & !request.getParameter("direccion").isEmpty() & !request.getParameter("tipo").isEmpty()
+                    & !request.getParameter("usuario").isEmpty()) {
+                if (esNumero(request.getParameter("precio"))) {
+                    forward = true;
+//destino = "control?target=inmueble&op=select&action=view";
+                    Inmueble inmueble = new Inmueble();
+                    inmueble.setTipo(request.getParameter("tipo"));
+                    inmueble.setDireccion(request.getParameter("direccion"));
+                    inmueble.setLocalidad(request.getParameter("localidad"));
+                    inmueble.setUsuario(request.getParameter("usuario"));
+                    inmueble.setPrecio(BigDecimal.valueOf(Double.parseDouble(request.getParameter("precio"))));
+                    ModeloInmueble.insert(inmueble);
+                    List<Inmueble> lista = ModeloInmueble.get();
+                    int id = lista.get(lista.size()-1).getId();
+                    System.out.println("id "+id);
+                    request.setAttribute("id", id);
+                    destino = "idCreado.jsp";
+                } else {
+                    forward = true;
+                    request.setAttribute("error", "Error al subir el inmueble");
+                    destino = "error.jsp";
                 }
             } else {
 
