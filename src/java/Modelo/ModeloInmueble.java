@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *ANTONIOMR
  */
 package Modelo;
 
@@ -23,7 +21,6 @@ public class ModeloInmueble {
         session.close();
         return inmuebles;
     }
-
     public static Inmueble get(String id) {
         Session session = NewHibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
@@ -50,6 +47,7 @@ public class ModeloInmueble {
         session.getTransaction().commit();
         session.flush();
         session.close();
+        
     }
 
     public static void edit(Inmueble i) {
